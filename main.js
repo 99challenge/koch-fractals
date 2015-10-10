@@ -12,21 +12,43 @@ window.requestAnimFrame = (function() {
 var main = (function () {
 
     // Module vars
-    var canvas, ctx;
+    var canvas, ctx, k;
 
-    var fractal = function (order, size) {
-        if (order === 0) {
+    var KochFractal = function () {
+        this.start = [];
+        this.end = [];
+        this.lines = [];
 
-        }
-        else {
+    };
 
-        }
+    KochFractal.prototype.nextLevel = function () {
+
+    };
+
+    KochFractal.prototype.restart = function () {
+
+    };
+
+    KochFractal.prototype.getCount = function () {
+
+    };
+
+    KochFractal.prototype.render = function () {
+
+    };
+
+    KochFractal.prototype._iterate = function (before) {
+
     };
 
     // Draw
     var draw = function () {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-        fractal()
+        k.render();
+        k.nextLevel();
+        if (k.getCount() > 5) {
+            k.restart();
+        }
     };
 
     // Main loop
@@ -52,6 +74,8 @@ var main = (function () {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
         }, false);
+
+        k = new KochFractal();
 
         loop();
     };
